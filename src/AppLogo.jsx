@@ -1,4 +1,3 @@
-// 📁 src/AppLogo.jsx
 import React from "react";
 
 function AppLogo() {
