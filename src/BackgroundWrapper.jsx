@@ -1,5 +1,5 @@
 import React from "react";
-import AppLogo from "./applogo";
+import AppLogo from "./AppLogo";
 
 function BackgroundWrapper({ children }) {
   return (
