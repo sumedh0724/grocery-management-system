@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import BackgroundWrapper from "./BackgroundWrapper";
 import HomeButton from "./HomeButton";
-import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const navigate = useNavigate();
