@@ -12,12 +12,14 @@ import GenerateBill from "./GenerateBill";
 import TransactionHistory from "./TransactionHistory";
 import LoginPage from "./LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
+import SplashScreen from "./splashscreen"; // ✅ Corrected
 import AddItemPage from "./AddItemPage";
 
 function App() {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   // 🔹 Load inventory & cart from localStorage once
   useEffect(() => {
@@ -41,6 +43,16 @@ function App() {
   useEffect(() => {
     if (loaded) localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart, loaded]);
+
+  // 🌈 Splash Screen Logic
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) {
+    return <SplashScreen onFinish={() => setShowSplash(false)} />;
+  }
 
   if (!loaded) {
     return (

@@ -116,7 +116,7 @@ function StockPage({ items, setItems }) {
     <BackgroundWrapper>
       <div className="max-w-5xl mx-auto p-6 pt-20">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-blue-700">Grocery Inventory</h1>
+          <h1 className="text-3xl font-bold text-blue-700">Inventory</h1>
           <Link to="/additem" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
             ➕ Add Item
           </Link>

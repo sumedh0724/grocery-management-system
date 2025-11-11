@@ -1,21 +1,23 @@
 import React from "react";
+import { motion } from "framer-motion";
 import AppLogo from "./AppLogo";
 
 function BackgroundWrapper({ children }) {
   return (
-    <div
-      className="min-h-screen bg-gradient-to-br from-[#c4aaaa] via-[#646f76] to-[#b91616] text-gray-100"
-      style={{
-        backgroundImage:
-          "linear-gradient(to bottom right, #1e1e1e, #2a2a2a)",
-        backgroundAttachment: "fixed",
-      }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden"
     >
-      <div className="min-h-screen backdrop-blur-sm bg-white/5">
-      <AppLogo/>
-      {children}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-10 left-10 animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl bottom-10 right-10 animate-pulse"></div>
       </div>
-    </div>
+
+      <AppLogo/>
+      <div className="relative z-10 pt-20 px-4">{children}</div>
+    </motion.div>
   );
 }
 
