@@ -45,8 +45,9 @@ function TransactionHistory() {
       {filteredTransactions.length === 0 ? (
         <p className="text-center text-gray-400">No transactions found.</p>
       ) : (
-        <div className="bg-white backdrop-blur-md border border-white/10 rounded-xl shadow-lg overflow-hidden mx-4">
-          <table className="w-full text-left text-zinc-900">
+        <div className="bg-white backdrop-blur-md border border-white/10 rounded-xl shadow-lg mx-4 
+                overflow-x-auto overflow-y-auto max-h-[70vh]">
+            <table className="min-w-full text-left text-zinc-900">
             <thead className="bg-white/5 text-blue-600">
               <tr>
                 <th className="px-4 py-3">Transaction ID</th>
