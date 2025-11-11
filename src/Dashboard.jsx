@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import BackgroundWrapper from "./BackgroundWrapper";
-import Navbar from "./Navbar";
 
 function Dashboard() {
   const navigate = useNavigate();
