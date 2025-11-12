@@ -5,7 +5,7 @@ function SplashScreen({ onFinish }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onFinish();
-    }, 2500); // 2.5 seconds visible
+    }, 2500); 
     return () => clearTimeout(timer);
   }, [onFinish]);
 
@@ -18,11 +18,9 @@ function SplashScreen({ onFinish }) {
         transition={{ duration: 0.8 }}
         className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white z-[9999] overflow-hidden"
       >
-        {/* Background Glow Effects */}
         <div className="absolute w-80 h-80 bg-blue-500/20 rounded-full blur-3xl top-1/3 left-1/3 animate-pulse"></div>
         <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl bottom-1/3 right-1/3 animate-pulse"></div>
 
-        {/* TEXT LOGO — mimics your uploaded design */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +36,6 @@ function SplashScreen({ onFinish }) {
           </span>
         </motion.h1>
 
-        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -8,21 +8,18 @@ function Dashboard() {
 
   return (
     <BackgroundWrapper>
-      {/* <Navbar /> */}
-
-      {/* 👇 Main Content Area */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center justify-center text-center px-6 pt-24 pb-12 min-h-[calc(100vh-6rem)] overflow-hidden"
       >
-        {/* 🏷️ Title */}
+        {/* Title */}
         <h1 className="text-4xl font-extrabold text-blue-400 mb-10 drop-shadow-lg flex items-center gap-3">
           🛒 <span>Dashboard</span>
         </h1>
 
-        {/* 🔹 2×2 Button Grid */}
+        {/* Button Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-md">
           <button
             onClick={() => navigate("/generate-bill")}
@@ -56,7 +53,6 @@ function Dashboard() {
           </button>
         </div>
 
-        {/* Footer Padding for Mobile */}
         <div className="h-10 sm:h-0"></div>
       </motion.div>
     </BackgroundWrapper>

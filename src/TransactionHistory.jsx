@@ -4,15 +4,15 @@ import HomeButton from "./HomeButton";
 
 function TransactionHistory() {
   const [transactions, setTransactions] = useState([]);
-  const [expanded, setExpanded] = useState(null); // Track which transaction is open
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ New: for search input
+  const [expanded, setExpanded] = useState(null); 
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("transactions")) || [];
     setTransactions(saved);
   }, []);
 
-  // ✅ Filter transactions by name or ID
+  // Filtering transactions by name or ID
   const filteredTransactions = [...(transactions || [])]
   .reverse()
   .filter((t) => {
@@ -108,7 +108,6 @@ function TransactionHistory() {
         </div>
       )}
 
-      {/* 🧹 Optional Clear Button */}
       {transactions.length > 0 && (
         <div className="text-center mt-6">
           <button

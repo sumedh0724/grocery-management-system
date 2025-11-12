@@ -8,12 +8,12 @@ function GenerateBill({ items, setItems }) {
   const [cart, setCart] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [message, setMessage] = useState("");
-  const [quantities, setQuantities] = useState({}); // ✅ per-item quantity tracking
+  const [quantities, setQuantities] = useState({}); 
   const [removeQty, setRemoveQty] = useState(1);
 
   const today = new Date().toISOString().split("T")[0];
 
-  // 🔍 Filter stock items for searching
+  // Filtering stock items for searching
   const filteredItems = items.filter(
     (item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -25,7 +25,7 @@ function GenerateBill({ items, setItems }) {
     0
   );
 
-  // 🧾 PDF Generator
+  // PDF Generator
   const generatePDF = () => {
   if (!customer || cart.length === 0) {
     alert("❌ Enter customer name and add items before generating bill.");
@@ -99,7 +99,7 @@ function GenerateBill({ items, setItems }) {
 };
 
 
-  // ♻️ Restore stock helper
+  // Restore stock helper
   const restoreStock = (item, qty) => {
     setItems((prev) =>
       prev.map((i) =>
@@ -112,7 +112,7 @@ function GenerateBill({ items, setItems }) {
     );
   };
 
-  // ➖ Partial remove from cart
+  // Partial remove from cart
   const handlePartialRemove = (item, qtyToRemove) => {
     if (qtyToRemove <= 0 || qtyToRemove > item.quantity) {
       alert("⚠️ Invalid quantity to remove!");
@@ -136,7 +136,7 @@ function GenerateBill({ items, setItems }) {
     setMessage(`➖ Removed ${qtyToRemove} ${item.unit} of ${item.name} from bill.`);
   };
 
-  // ❌ Remove item fully
+  // Removinh item fully
   const handleRemoveAll = (item) => {
     restoreStock(item, item.quantity);
     setCart((prev) =>
@@ -152,7 +152,7 @@ function GenerateBill({ items, setItems }) {
     setMessage(`🗑️ Removed all of ${item.name} from bill.`);
   };
 
-  // 🧮 Add item to bill
+  // Add item to bill
   const handleAdd = (item, qty) => {
     if (qty <= 0) {
       alert("❌ Quantity must be greater than 0.");
@@ -184,7 +184,7 @@ function GenerateBill({ items, setItems }) {
       setCart([...cart, { ...item, quantity: qty }]);
     }
 
-    // Deduct stock
+    // REmove stock
     setItems((prev) =>
       prev.map((i) =>
         i.name === item.name &&
@@ -217,7 +217,7 @@ function GenerateBill({ items, setItems }) {
           />
         </div>
 
-        {/* Search */}
+        {/* Search bar*/}
         <input
           type="text"
           placeholder="Search items from stock..."

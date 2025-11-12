@@ -52,7 +52,6 @@ function CartPage({ cart, setCart, setItems }) {
           Generate Receipt
         </button>
       </div>
-      {/* ... rest of your cart content ... */}
     </div>
     </HomeButton>
     </BackgroundWrapper>

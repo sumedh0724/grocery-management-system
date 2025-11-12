@@ -12,7 +12,6 @@ function StockPage({ items, setItems }) {
 
   const unitOptions = ['pcs', 'kg', 'litre', 'g', 'ml', 'packet'];
 
-  // 🧮 Sorting logic
   const sortItems = (list) => {
     const sorted = [...list];
     if (sortOption === 'name') sorted.sort((a, b) => a.name.localeCompare(b.name));
@@ -97,13 +96,13 @@ function StockPage({ items, setItems }) {
     setMessage(`🗑️ Deleted batch of ${name}${expiry ? ` (Exp: ${expiry})` : ''}.`);
   };
 
-  // 🚨 Low stock
+  // Low stock
   const isLowStock = (item) => {
     if (['kg', 'litre', 'g', 'ml'].includes(item.unit)) return item.quantity < 1;
     return item.quantity < 5;
   };
 
-  // 🔴 Expiring soon (within 7 days)
+  // Expiring projects
   const isExpiringSoon = (expiry) => {
     if (!expiry) return false;
     const todayDate = new Date();

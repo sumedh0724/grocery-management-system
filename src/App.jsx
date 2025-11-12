@@ -7,12 +7,11 @@ import {
 } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import StockPage from "./StockPage";
-import CartPage from "./CartPage";
 import GenerateBill from "./GenerateBill";
 import TransactionHistory from "./TransactionHistory";
 import LoginPage from "./LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
-import SplashScreen from "./splashscreen"; // ✅ Corrected
+import SplashScreen from "./splashscreen"; 
 import AddItemPage from "./AddItemPage";
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [showSplash, setShowSplash] = useState(true);
 
-  // 🔹 Load inventory & cart from localStorage once
+  //  Load inventory & cart from localStorage once
   useEffect(() => {
     try {
       const savedItems = localStorage.getItem("items");
@@ -35,7 +34,7 @@ function App() {
     }
   }, []);
 
-  // 🔹 Save whenever items or cart change (after first load)
+  //  Save whenever items or cart change 
   useEffect(() => {
     if (loaded) localStorage.setItem("items", JSON.stringify(items));
   }, [items, loaded]);
@@ -44,7 +43,7 @@ function App() {
     if (loaded) localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart, loaded]);
 
-  // 🌈 Splash Screen Logic
+  // Splash Screen Logic
   useEffect(() => {
     const timer = setTimeout(() => setShowSplash(false), 2500);
     return () => clearTimeout(timer);
