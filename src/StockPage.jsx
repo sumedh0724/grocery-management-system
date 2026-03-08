@@ -129,7 +129,7 @@ function StockPage({ items, setItems }) {
             placeholder="Search items..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="border px-3 py-2 rounded w-full md:w-1/2"
+            className="border px-3 py-2 rounded w-full md:w-1/2 text-zinc-800"
           />
           <div className="flex items-center gap-7">
             <label className="font-medium text-gray-200">Sort by:</label>
