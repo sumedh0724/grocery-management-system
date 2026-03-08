@@ -98,7 +98,7 @@ function StockPage({ items, setItems }) {
 
   // Low stock
   const isLowStock = (item) => {
-    if (['kg', 'litre', 'g', 'ml'].includes(item.unit)) return item.quantity < 1;
+    if (['kg', 'litre', 'g', 'ml'].includes(item.unit)) return item.quantity < 10;
     return item.quantity < 5;
   };
 
