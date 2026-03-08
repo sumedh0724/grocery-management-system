@@ -146,8 +146,8 @@ function StockPage({ items, setItems }) {
             <button
               onClick={() => {
                 localStorage.removeItem("items");
-                alert("🧹 Inventory cleared!");
-                window.location.reload();
+                setItems([]);
+                setMessage("🧹 Inventory cleared!");
               }}
               className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
             >
