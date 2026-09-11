@@ -130,6 +130,7 @@ function StockPage({ items, setItems }) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="border px-3 py-2 rounded w-full md:w-1/2 text-zinc-800"
+            className="border px-3 py-2 rounded w-full md:w-1/2 text-zinc-800"
           />
           <div className="flex items-center gap-7">
             <label className="font-medium text-gray-200">Sort by:</label>
@@ -148,6 +149,8 @@ function StockPage({ items, setItems }) {
                 localStorage.removeItem("items");
 setItems([]);
 setMessage("🧹 Inventory cleared!");
+                setItems([]);
+                setMessage("🧹 Inventory cleared!");
               }}
               className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
             >
