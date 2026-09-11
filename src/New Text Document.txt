@@ -1,0 +1,167 @@
+# 🛒 Grocery Inventory & Billing System (React)
+
+A modern **React-based grocery inventory management and billing app** designed for small retail stores.  
+This project provides a simple yet powerful way to **manage stock, generate PDF bills, track transactions, and secure admin access** — all stored locally using **browser `localStorage`**.
+
+---
+
+## 🚀 Features
+
+### 🔐 Admin Authentication
+- Secure login page (`LoginPage.jsx`) with an admin password (`admin123` by default).
+- Protected routes using `ProtectedRoute.jsx` — prevents unauthorized access.
+
+---
+
+### 🏠 Dashboard
+- Central hub for all actions:
+  - 🧾 Generate Bill  
+  - 📦 View Stock  
+  - ➕ Add Items  
+  - 📜 Transaction History  
+  - 🛍️ View Cart  
+  - 🔒 Logout  
+
+---
+
+### 📦 Stock Management
+- Add, view, search, sort, and manage grocery items.
+- Features include:
+  - Search items by name.
+  - Sort by **name**, **stock quantity**, or **expiry date**.
+  - Mark **expired** and **low-stock** items visually.
+  - Add or delete specific batches.
+  - Syncs automatically with `localStorage`.
+
+---
+
+### ➕ Add New Items
+- Add new products or update quantities for existing ones.
+- Fields: Name, Price, Quantity, Unit (pcs, kg, litre, etc.), and Expiry Date.
+- Automatically merges duplicate items with same name, price, and expiry.
+
+---
+
+### 🧾 Bill Generation
+- Search and select items from inventory to create a bill.
+- Generates a professional **PDF receipt** using `jsPDF`.
+- Automatically updates stock quantities when items are added to a bill.
+- Displays total amount and item details.
+- Works offline — no server required.
+
+---
+
+### 🛍️ Cart Page
+- Shows items currently being billed.
+- Requires customer name before saving the transaction.
+- On receipt generation:
+  - Saves transaction details (items, total, customer, date) to `localStorage`.
+  - Clears the cart for next use.
+
+---
+
+### 📜 Transaction History
+- Displays all previous bills with:
+  - Transaction ID, Customer Name, Date, and Total.
+- Click any transaction to expand and view all items purchased.
+- Data is persistently stored in `localStorage`.
+
+---
+
+### 🎨 UI and Components
+- **BackgroundWrapper.jsx:** Provides a gradient background with blur overlay.
+- **HomeButton.jsx:** Floating home shortcut for quick navigation.
+- Clean, responsive design with TailwindCSS utility classes.
+
+---
+
+## 💾 LocalStorage Usage
+
+| Data Type | Key | Description |
+|------------|-----|-------------|
+| Inventory Items | `items` | Stores all stock data |
+| Cart | `cart` | Holds items currently being billed |
+| Transactions | `transactions` | Saves past bills with item details |
+| Auth Status | `isAuthenticated` | Tracks admin login state |
+
+---
+
+## 🗂️ Project Structure
+
+src/
+├── App.jsx # Main app with routing
+├── AddItemPage.jsx # Add or update items
+├── BackgroundWrapper.jsx # App layout background
+├── CartPage.jsx # Cart and receipt generation
+├── Dashboard.jsx # Main dashboard menu
+├── GenerateBill.jsx # Bill creation and PDF export
+├── HomeButton.jsx # Floating home link
+├── LoginPage.jsx # Admin login page
+├── ProtectedRoute.jsx # Route protection logic
+├── StockPage.jsx # Stock/inventory management
+├── TransactionHistory.jsx # Transaction log
+
+yaml
+Copy code
+
+---
+
+## 🧩 Tech Stack
+
+- **Frontend:** React.js  
+- **Styling:** TailwindCSS  
+- **PDF Generation:** jsPDF  
+- **Storage:** Browser LocalStorage  
+- **Routing:** React Router DOM  
+
+---
+
+## 🧰 Installation & Setup
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/yourusername/grocery-inventory-system.git
+
+# 2️⃣ Navigate to project folder
+cd grocery-inventory-system
+
+# 3️⃣ Install dependencies
+npm install
+
+# 4️⃣ Run the app
+npm start
+App will start at: http://localhost:3000
+
+🔑 Default Credentials
+Role	Password
+Admin	admin123
+
+You can change this password in LoginPage.jsx.
+
+📘 How It Works (Quick Summary)
+Login using admin credentials.
+
+Add grocery items via “Add Item” page.
+
+View and manage stock from “View Stock.”
+
+Generate bills and print/download as PDF.
+
+Track all transactions under “Transaction History.”
+
+Logout anytime — your data remains saved locally.
+
+🧠 Highlights
+Works completely offline (no database or backend).
+
+Simple React + LocalStorage architecture.
+
+Modern UI with responsive layout.
+
+Lightweight and easy to customize for any retail setup.
+
+📄 License
+This project is licensed under the MIT License — you are free to use, modify, and distribute it.
+
+👨‍💻 Developed by:
+Sumedh Bagde

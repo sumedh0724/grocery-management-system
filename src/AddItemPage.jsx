@@ -60,7 +60,7 @@ function AddItemPage({ items, setItems }) {
 
   return (
     <BackgroundWrapper>
-        <div className="min-h-screen flex flex-col items-center justify-center p-6">
+        <div className="flex flex-col items-center justify-center p-6">
       <div className=" bg-zinc-300 p-8 rounded-2xl shadow-lg w-full max-w-md">
         <h1 className="text-2xl font-bold text-blue-700 mb-6 text-center">
           ➕ Add New Item
